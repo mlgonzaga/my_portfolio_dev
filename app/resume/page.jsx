@@ -15,12 +15,12 @@ const about = {
       fielValue: "Mateus Luiz Gonzaga",
     },
     {
-      fieldName: "Phone",
-      fielValue: "+55 (34) 99243-4560",
-    },
-    {
       fieldName: "Email",
       fielValue: "mateusluizgonzaga@gmail.com",
+    },
+    {
+      fieldName: "Phone",
+      fielValue: "+55 (34) 99243-4560",
     },
     {
       fieldName: "Experience",
@@ -269,10 +269,12 @@ const Resume = () => {
               <div className="flex flex-col gap-[30px]">
                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
                   <h3 className="text-4xl font-bold">{skills.title}</h3>
-                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{skills.description}</p>
+                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                    {skills.description}
+                  </p>
                 </div>
                 <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px] gap-4">
-                  {skills.skillList.map((skill, index)=>{
+                  {skills.skillList.map((skill, index) => {
                     return (
                       <li key={index}>
                         <TooltipProvider delayDuration={100}>
@@ -283,19 +285,35 @@ const Resume = () => {
                               </div>
                             </TooltipTrigger>
                             <TooltipContent>
-                              <p>{skill.name}</p>
+                              <p className="capitalize">{skill.name}</p>
                             </TooltipContent>
                           </Tooltip>
                         </TooltipProvider>
                       </li>
-                    )
+                    );
                   })}
                 </ul>
               </div>
             </TabsContent>
             {/* about */}
-            <TabsContent value="about" className="w-full">
-              about me
+            <TabsContent value="about" 
+            className="w-full text-center">
+              <div className="flex flex-col gap-[30px]">
+                <h3 className="text-4xl font-bold">{about.title}</h3>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                  {about.description}
+                </p>
+                <ul className="grid grid-cols-1 xl:grid-cols-2 pag-y-6 max-w-[620px] mx-auto xl:mx-0">
+                  {about.info.map((item, index) => {
+                    return (
+                      <li key={index} className="flex items-center justify-center xl:justify-start gap-5">
+                        <span className="text-white/60">{item.fieldName}</span>
+                        <span className="text-md">{item.fielValue}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </TabsContent>
           </div>
         </Tabs>
