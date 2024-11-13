@@ -55,10 +55,10 @@ const Contact = () => {
               </p>
                     {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type='firstname' placeholder="Firstname"/>
-                <Input type='lastname' placeholder="Lastname"/>
-                <Input type='email' placeholder="Email address"/>
-                <Input type='phone' placeholder="Phone Number"/>
+                <Input type="firstname" placeholder="Firstname"/>
+                <Input type="lastname" placeholder="Lastname"/>
+                <Input type="email" placeholder="Email address"/>
+                <Input type="phone" placeholder="Phone Number"/>
               </div>
 
               {/* select */}
@@ -82,7 +82,7 @@ const Contact = () => {
               placeholder="Type your message here"
               />
               {/* button */}
-              <Button size='md' className="max-w-40">
+              <Button size="md" className="max-w-40">
                 Send Message
               </Button>
             </form>
@@ -92,7 +92,7 @@ const Contact = () => {
             <ul className="flex flex-col gap-10">
                 {info.map((item, index)=>{
                     return(
-                        <li className="flex items-center gap-6">
+                        <li key={index} className="flex items-center gap-6">
                             <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#27272c] text-accent rounded-xl flex items-center justify-center">
                                 <div className="text-[28px]">{item.icon}</div>
                             </div>
