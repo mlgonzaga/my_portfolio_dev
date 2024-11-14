@@ -42,11 +42,11 @@ const projects = [
     category: "frontend",
     title: "project 3",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque similique aut veniam temporibus saepe asperiores aspernatur sit possimus, distinctio, quasi aliquam velit dolor at perferendis, tempora exercitationem. Ex, molestiae nihil.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Node.js" }],
-    image: "/assets/work/thumb3.png",
-    live: "",
-    github: "",
+      "Notes is an app that saves your notes in both text and voice using a library called SpeechRecognition and uses local storage for data persistence.",
+    stack: [{ name: "React.js" }, { name: "Tailwind.css" }, { name: "Node.js" }],
+    image: "/assets/work/notes_app.png",
+    live: "https://notes-virid-nine.vercel.app/",
+    github: "https://github.com/mlgonzaga/notes",
   },
 ];
 
@@ -96,7 +96,7 @@ const Work = () => {
               {/** buttons */}
               <div className="flex items-center gap-4">
                 {/** live projects button */}
-                <Link href={project.live}>
+                <Link href={project.live} target="_black" >
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
@@ -110,7 +110,7 @@ const Work = () => {
                 </Link>
 
                 {/** github projects button */}
-                <Link href={project.github}>
+                <Link href={project.github} target="_black">
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
@@ -142,7 +142,7 @@ const Work = () => {
                             <Image 
                             src={project.image} 
                             fill 
-                            className="object-cover"
+                            className="object-fill"
                             alt="" />
                         </div>
                     </div>
