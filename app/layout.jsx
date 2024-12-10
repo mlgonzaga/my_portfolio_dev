@@ -12,7 +12,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata = {
-  title: "Protfólio Mateus Luiz Gonzaga",
+  title: "Portfólio Mateus Luiz Gonzaga",
   description: "",
 };
 
